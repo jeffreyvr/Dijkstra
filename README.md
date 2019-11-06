@@ -1,6 +1,6 @@
 # Dijkstra Shortest Path
 
-[![Build Status](https://travis-ci.org/jeffreyvr/Dijkstra.svg?branch=master)](https://travis-ci.org/jeffreyvr/ShortestPath)
+[![Build Status](https://travis-ci.org/jeffreyvr/Dijkstra.svg?branch=master)](https://travis-ci.org/jeffreyvr/Dijkstra)
 
 An weighted shortest path (Dijkstra) algorithm.
 
