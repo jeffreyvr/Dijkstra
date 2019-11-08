@@ -2,29 +2,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Node implements Comparable<Node> {
-    private String name;
+    private Integer number;
     private List<Edge> edges;
-    private boolean visited;
     private Node previousNode;
-    private double minDistance = Double.MAX_VALUE;
+    private Integer minDistance = Integer.MAX_VALUE;
 
     /**
      * Node
      *
-     * @param name Name of the node
+     * @param number Number of the node
      */
-    public Node(String name) {
-        this.name = name;
+    public Node(Integer number) {
+        this.number = number;
         this.edges = new ArrayList<>();
     }
 
     /**
-     * Get the node name
+     * Get the node number
      *
-     * @return node name
+     * @return node number
      */
-    public String getName() {
-        return this.name;
+    public Integer getNumber() {
+        return this.number;
     }
 
     /**
@@ -59,7 +58,7 @@ public class Node implements Comparable<Node> {
      *
      * @return min distance
      */
-    public double getMinDistance() {
+    public Integer getMinDistance() {
         return minDistance;
     }
 
@@ -68,7 +67,7 @@ public class Node implements Comparable<Node> {
      *
      * @param minDistance
      */
-    public void setMinDistance(double minDistance) {
+    public void setMinDistance(Integer minDistance) {
         this.minDistance = minDistance;
     }
 
@@ -92,11 +91,11 @@ public class Node implements Comparable<Node> {
 
     @Override
     public int compareTo(Node otherNode) {
-        return Double.compare(this.minDistance, otherNode.minDistance);
+        return Integer.compare(this.minDistance, otherNode.minDistance);
     }
 
     @Override
     public String toString() {
-        return name;
+        return "" + this.number;
     }
 }

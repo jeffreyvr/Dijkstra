@@ -10,11 +10,11 @@ class Main {
     public void example() {
         Dijkstra dijkstra = new Dijkstra();
 
-        Node a = dijkstra.createNode("A");
-        Node b = dijkstra.createNode("B");
-        Node c = dijkstra.createNode("C");
-        Node d = dijkstra.createNode("D");
-        Node e = dijkstra.createNode("E");
+        Node a = dijkstra.createNode(1);
+        Node b = dijkstra.createNode(2);
+        Node c = dijkstra.createNode(3);
+        Node d = dijkstra.createNode(4);
+        Node e = dijkstra.createNode(5);
 
         a.addNeighbour(dijkstra.createEdge(a, b,1));
         a.addNeighbour(dijkstra.createEdge(a, d,8));
@@ -24,6 +24,6 @@ class Main {
 
         dijkstra.computePath(a);
 
-        System.out.println("The shortest path between A and E: " + dijkstra.getShortestPathTo(e));
+        System.out.println("The shortest path between 1 and 5: " + dijkstra.getShortestPathTo(e));
     }
 }

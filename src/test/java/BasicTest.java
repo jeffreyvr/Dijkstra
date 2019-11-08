@@ -11,11 +11,11 @@ public class BasicTest {
      * Setting up a graph for testing.
      */
     public void setup() {
-        Node a = this.dijkstra.createNode("A");
-        Node b = this.dijkstra.createNode("B");
-        Node c = this.dijkstra.createNode("C");
-        Node d = this.dijkstra.createNode("D");
-        Node e = this.dijkstra.createNode("E");
+        Node a = this.dijkstra.createNode(1);
+        Node b = this.dijkstra.createNode(2);
+        Node c = this.dijkstra.createNode(3);
+        Node d = this.dijkstra.createNode(4);
+        Node e = this.dijkstra.createNode(5);
 
         a.addNeighbour(this.dijkstra.createEdge(a, b,1));
         a.addNeighbour(this.dijkstra.createEdge(a, d,8));
@@ -30,22 +30,22 @@ public class BasicTest {
     public void test_shortest_path_outcomes() {
         this.setup();
 
-        assertEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode("E")).toString(), "[A, D, E]");
-        assertEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode("B")).toString(), "[A, B]");
-        assertNotEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode("C")).toString(), "[A, B]");
+        assertEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode(5)).toString(), "[1, 4, 5]");
+        assertEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode(2)).toString(), "[1, 2]");
+        assertNotEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode(3)).toString(), "[1, 2]");
     }
 
     @Test
     public void test_should_return_null_on_looking_for_non_existing_node() {
         this.setup();
 
-        assertNull(this.dijkstra.findNode("G"));
+        assertNull(this.dijkstra.findNode(7));
     }
 
     @Test
     public void test_path_should_be_empty_on_non_existing_shortest_path() {
         this.setup();
 
-        assertEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode("G")).isEmpty(), true);
+        assertEquals(this.dijkstra.getShortestPathTo(this.dijkstra.findNode(7)).isEmpty(), true);
     }
 }

@@ -7,15 +7,15 @@ class Dijkstra {
     /**
      * Add node
      *
-     * @param name Node name
+     * @param number Node number
      * @return The created node
      */
-    public Node createNode(String name) {
+    public Node createNode(Integer number) {
         if (this.nodes == null){
-            this.nodes = new LinkedList<Node>();
+            this.nodes = new LinkedList<>();
         }
 
-        Node node = new Node(name);
+        Node node = new Node(number);
 
         this.nodes.add(node);
 
@@ -25,12 +25,12 @@ class Dijkstra {
     /**
      * Find node
      *
-     * @param name
+     * @param number
      * @return The node or null
      */
-    public Node findNode(String name) {
+    public Node findNode(Integer number) {
         for (Node node : this.nodes) {
-            if (node.getName().equals(name)) {
+            if (node.getNumber().equals(number)) {
                 return node;
             }
         }
@@ -45,9 +45,9 @@ class Dijkstra {
      * @param cost Cost or weight of the edge
      * @return Created Edge
      */
-    public Edge createEdge(Node a, Node b, double cost) {
+    public Edge createEdge(Node a, Node b, Integer cost) {
         if (this.edges == null){
-            this.edges = new LinkedList<Edge>();
+            this.edges = new LinkedList<>();
         }
 
         Edge edge = new Edge(cost, a, b);
@@ -75,15 +75,15 @@ class Dijkstra {
             Node node = priorityQueue.poll();
 
             for (Edge edge : node.getEdges()) {
-                Node v = edge.getTargetNode();
-                double cost = edge.getCost();
-                double minDistance = node.getMinDistance() + cost;
+                Node n = edge.getTargetNode();
+                Integer cost = edge.getCost();
+                Integer minDistance = node.getMinDistance() + cost;
 
-                if (minDistance < v.getMinDistance()) {
+                if (minDistance < n.getMinDistance()) {
                     priorityQueue.remove(node);
-                    v.setPreviousNode(node);
-                    v.setMinDistance(minDistance);
-                    priorityQueue.add(v);
+                    n.setPreviousNode(node);
+                    n.setMinDistance(minDistance);
+                    priorityQueue.add(n);
                 }
             }
         }

@@ -1,9 +1,9 @@
 public class Edge {
-    private double cost;
+    private Integer cost;
     private Node startNode;
     private Node targetNode;
 
-    public Edge(double cost, Node startNode, Node targetNode) {
+    public Edge(Integer cost, Node startNode, Node targetNode) {
         this.cost = cost;
         this.startNode = startNode;
         this.targetNode = targetNode;
@@ -14,7 +14,7 @@ public class Edge {
      *
      * @return edge cost
      */
-    public double getCost() {
+    public Integer getCost() {
         return cost;
     }
 
@@ -23,7 +23,7 @@ public class Edge {
      *
      * @param cost the edge cost
      */
-    public void setCost(double cost) {
+    public void setCost(Integer cost) {
         this.cost = cost;
     }
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="BasicTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-11-06T22:13:10" hostname="MacBook-Pro-van-Jeffrey.local" time="0.012">
+<testsuite name="BasicTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2019-11-08T15:58:41" hostname="MacBook-Pro-van-Jeffrey.local" time="0.005">
   <properties/>
-  <testcase name="test_should_return_null_on_looking_for_non_existing_node" classname="BasicTest" time="0.003"/>
-  <testcase name="test_path_should_be_empty_on_non_existing_shortest_path" classname="BasicTest" time="0.001"/>
-  <testcase name="test_shortest_path_outcomes" classname="BasicTest" time="0.001"/>
+  <testcase name="test_should_return_null_on_looking_for_non_existing_node" classname="BasicTest" time="0.004"/>
+  <testcase name="test_path_should_be_empty_on_non_existing_shortest_path" classname="BasicTest" time="0.0"/>
+  <testcase name="test_shortest_path_outcomes" classname="BasicTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
